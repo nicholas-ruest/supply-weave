@@ -1,0 +1,9 @@
+[package]
+name="sw-seed"
+version.workspace=true
+edition.workspace=true
+license.workspace=true
+[dependencies]
+sw-types={path="../sw-types"}
+[lints]
+workspace=true

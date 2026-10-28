@@ -1,0 +1,12 @@
+[package]
+name="sw-recall"
+version.workspace=true
+edition.workspace=true
+license.workspace=true
+[dependencies]
+sw-types={path="../sw-types"}
+sw-errors={path="../sw-errors"}
+sw-embedding={path="../sw-embedding"}
+sw-ruvector={path="../sw-ruvector"}
+[lints]
+workspace=true

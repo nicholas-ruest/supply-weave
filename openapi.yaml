@@ -1,0 +1,28 @@
+openapi: 3.1.0
+info: {title: Supply Weave API, version: 0.1.0}
+paths:
+  /health: {get: {responses: {'200': {description: healthy}}}}
+  /ready: {get: {responses: {'200': {description: ready}}}}
+  /api/v1/plans:
+    get: {responses: {'200': {description: saved plans}}}
+    post:
+      parameters:
+        - {in: header, name: Authorization, required: true, schema: {type: string}}
+        - {in: header, name: Idempotency-Key, required: true, schema: {type: string}}
+        - {in: header, name: X-Correlation-Id, required: false, schema: {type: string}}
+      responses: {'201': {description: plan created}, '403': {description: policy denial}, '422': {description: invalid request}}
+  /api/v1/plans/{id}: {get: {parameters: [{in: path, name: id, required: true, schema: {type: string}}], responses: {'200': {description: saved plan}, '404': {description: absent}}}}
+components:
+  schemas:
+    CreatePlan:
+      type: object
+      required: [disruption_id,region,severity,duration_days,demand_units,require_certified,max_concentration,spend_limit]
+      properties:
+        disruption_id: {type: string}
+        region: {type: string}
+        severity: {type: number, minimum: 0, maximum: 1}
+        duration_days: {type: integer, minimum: 1}
+        demand_units: {type: integer, minimum: 1}
+        require_certified: {type: boolean}
+        max_concentration: {type: number, minimum: 0, maximum: 1}
+        spend_limit: {type: number, minimum: 1}

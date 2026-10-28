@@ -1,0 +1,5 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata: {name: supply-weave}
+spec: {template: {metadata: {annotations: {autoscaling.knative.dev/maxScale: '3'}}, spec: {serviceAccountName: supply-weave-runtime, timeoutSeconds: 300, containers: [{image: IMAGE_DIGEST, ports: [{containerPort: 8080}], env: [{name: SUPPLY_WEAVE_DATA, value: /tmp/supply-weave}], resources: {limits: {cpu: '1', memory: 1Gi}}}]}}}
+# Rollback: gcloud run services update-traffic supply-weave --to-revisions PREVIOUS=100

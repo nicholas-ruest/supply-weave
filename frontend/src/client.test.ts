@@ -1,0 +1,1 @@
+import{describe,it,expect}from'vitest';import type{CreatePlan}from'./client';describe('typed contract',()=>{it('models bounded input',()=>{const x:CreatePlan={disruption_id:'x',region:'EU',severity:.5,duration_days:2,demand_units:4,require_certified:true,max_concentration:.8,spend_limit:10};expect(x.severity).toBe(.5)})});
