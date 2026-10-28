@@ -1,0 +1,11 @@
+[package]
+name="sw-middleware"
+version.workspace=true
+edition.workspace=true
+license.workspace=true
+[dependencies]
+sw-errors={path="../sw-errors"}
+sw-auth={path="../sw-auth"}
+uuid={workspace=true}
+[lints]
+workspace=true

@@ -1,0 +1,1 @@
+import{readFileSync}from'node:fs';const api=readFileSync('../openapi.yaml','utf8');const client=readFileSync('src/client.ts','utf8');for(const token of ['/api/v1/plans','CreatePlan','max_concentration','spend_limit'])if(!api.includes(token)||!client.includes(token))throw new Error('contract drift: '+token);console.log('CONTRACT_DRIFT_CHECK_PASS');

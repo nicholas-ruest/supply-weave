@@ -1,0 +1,10 @@
+[package]
+name="sw-policy"
+version.workspace=true
+edition.workspace=true
+license.workspace=true
+[dependencies]
+sw-types={path="../sw-types"}
+sw-errors={path="../sw-errors"}
+[lints]
+workspace=true

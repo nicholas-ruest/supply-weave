@@ -1,0 +1,13 @@
+[package]
+name="sw-ruvector"
+version.workspace=true
+edition.workspace=true
+license.workspace=true
+[dependencies]
+sw-types={path="../sw-types"}
+sw-errors={path="../sw-errors"}
+sw-embedding={path="../sw-embedding"}
+ruvector-core={workspace=true}
+serde_json={workspace=true}
+[lints]
+workspace=true

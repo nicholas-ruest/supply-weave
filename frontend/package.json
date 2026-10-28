@@ -1,0 +1,34 @@
+{
+  "name": "supply-weave-ui",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run src",
+    "e2e": "playwright test",
+    "contract": "node scripts/check-contract.mjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "4.3.4",
+    "vite": "6.4.5",
+    "typescript": "5.7.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "lucide-react": "0.468.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@eslint/js": "9.39.1",
+    "typescript-eslint": "8.46.2",
+    "eslint": "9.39.1",
+    "globals": "15.14.0",
+    "vitest": "4.1.12",
+    "@playwright/test": "1.56.1",
+    "@types/node": "22.10.5"
+  }
+}

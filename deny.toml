@@ -1,0 +1,33 @@
+[advisories]
+yanked = "deny"
+ignore = [
+  # Pinned RuVector 2.4.0 transitively requires bincode 2.0.1; no safe upgrade exists.
+  "RUSTSEC-2025-0141",
+  # Arrow 59.3.2 (through DataFusion 55.2.0) requires zstd ^0.13; fixed zstd 0.14
+  # and zstd-safe 8.x are semver-incompatible. Supply Weave never accepts or
+  # emits compressed Arrow IPC; see docs/security.md.
+  "RUSTSEC-2026-0391",
+  "RUSTSEC-2026-0398",
+  "RUSTSEC-2026-0403",
+]
+
+[licenses]
+allow = [
+  "MIT",
+  "Apache-2.0",
+  "BSD-2-Clause",
+  "BSD-3-Clause",
+  "ISC",
+  "Unicode-3.0",
+  "Zlib",
+  "OpenSSL",
+  "CC0-1.0",
+  "BSL-1.0",
+]
+
+[bans]
+multiple-versions = "warn"
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
