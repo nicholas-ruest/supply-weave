@@ -7,7 +7,7 @@ response="$(curl -fsS -X POST http://127.0.0.1:18080/api/v1/plans \
   -H 'authorization: Bearer planner-token' \
   -H 'content-type: application/json' \
   -H 'idempotency-key: integration-composition' \
-  -d '{"scenario_id":"integration-composition","site":"Toronto","disrupted_supplier":"northstar-copper","demand_multiplier":1.25,"max_spend":50000,"risk_aversion":0.8}')"
+  -d '{"disruption_id":"integration-composition","region":"Toronto","severity":0.72,"duration_days":28,"demand_units":900,"require_certified":true,"max_concentration":0.65,"spend_limit":50000}')"
 
 node -e '
 const body=JSON.parse(process.argv[1]);
